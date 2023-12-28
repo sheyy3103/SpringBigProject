@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="false">
+		<csrf disabled="true" />
+		<!-- cấu hình các vai trò truy cập -->
+		<intercept-url pattern="/resources/**"
+			access="permitAll" />
+		<intercept-url pattern="/quan-tri/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/nguoi-dung/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_CLIENT')" />
+		<!-- trang cấm truy cập -->
+		<access-denied-handler error-page="/403" />
+		<!-- cấu hình form login -->
+		<form-login login-page="/dang-nhap"
+			login-processing-url="/loginProcess" default-target-url="/checkrole"
+			authentication-failure-url="/dang-nhap?loi"
+			username-parameter="username" password-parameter="password" />
+		<logout logout-url="/logout"
+			logout-success-url="/dang-xuat" delete-cookies="JSESSIONID" />
+	</http>
+	<!-- - cấu hình service xác định người dùng - passwordEncoder là đối tượng 
+		mã hóa mật khẩu, - accountDetailsService là đối tượng của lớp AccountDetailsService -->
+	<authentication-manager>
+		<authentication-provider
+			user-service-ref="accountDetailsService">
+			<password-encoder ref="passwordEncoder" />
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

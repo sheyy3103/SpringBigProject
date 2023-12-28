@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- Đinh nghĩa các view default vào đây -->
+	<definition name="adminlayout"
+		template="/WEB-INF/views/admin/layouts/adminlayout.jsp">
+		<put-attribute name="title" value="Trang quản trị"
+			type="string" />
+		<put-attribute name="dashboard" value="" type="string" />
+		<put-attribute name="category" value="" type="string" />
+		<put-attribute name="story" value="" type="string" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- Đinh nghĩa các view khác vào đây -->
+	<definition name="admin.dashboard" extends="adminlayout">
+		<put-attribute name="dashboard" value="active"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/dashboard.jsp" />
+	</definition>
+	<definition name="admin.category.list" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Danh mục" type="string" />
+		<put-attribute name="category" value="active"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/category/list.jsp" />
+	</definition>
+	<definition name="admin.category.add" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Danh mục" type="string" />
+		<put-attribute name="category" value="active"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/category/add.jsp" />
+	</definition>
+	<definition name="admin.category.edit" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Danh mục" type="string" />
+		<put-attribute name="category" value="active"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/category/edit.jsp" />
+	</definition>
+	<definition name="admin.story.list" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Truyện" type="string" />
+		<put-attribute name="story" value="active" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/story/list.jsp" />
+	</definition>
+	<definition name="admin.story.add" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Truyện" type="string" />
+		<put-attribute name="story" value="active" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/story/add.jsp" />
+	</definition>
+	<definition name="admin.story.edit" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Truyện" type="string" />
+		<put-attribute name="story" value="active" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/story/edit.jsp" />
+	</definition>
+	<definition name="admin.story.details" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Truyện" type="string" />
+		<put-attribute name="story" value="active" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/story/details.jsp" />
+	</definition>
+	<definition name="admin.chapter.add" extends="adminlayout">
+		<put-attribute name="title"
+			value="Trang quản trị | Truyện" type="string" />
+		<put-attribute name="story" value="active" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/pages/chapter/add.jsp" />
+	</definition>
+</tiles-definitions>
+                

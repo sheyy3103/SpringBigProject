@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- Định nghĩa các view default -->
+	<definition name="clientlayout"
+		template="/WEB-INF/views/client/layouts/clientlayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+	<!-- Định nghĩa các view khác -->
+	<definition name="index" extends="clientlayout">
+		<put-attribute name="title" value="Trang chủ"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/pages/index.jsp" />
+	</definition>
+	<definition name="category" extends="clientlayout">
+		<put-attribute name="title" value="Truyện theo danh mục"
+			type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/pages/category.jsp" />
+	</definition>
+	<definition name="status" extends="clientlayout">
+		<put-attribute name="title"
+			value="Truyện theo trạng thái" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/pages/status.jsp" />
+	</definition>
+	<definition name="story" extends="clientlayout">
+		<put-attribute name="title"
+			value="Chi tiết truyện" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/pages/story.jsp" />
+	</definition>
+	<definition name="chapter" extends="clientlayout">
+		<put-attribute name="title"
+			value="Chi tiết truyện" type="string" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/pages/chapter.jsp" />
+	</definition>
+</tiles-definitions>
+                
